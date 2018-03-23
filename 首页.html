@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/a.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				margin: 0;padding: 0;
+			}
+			p{
+				margin: 0;padding: 0;
+			}
+		</style>
+		<title></title>
+	</head>
+	<body>
+		<div class="navbar-fixed-top top">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<div class="a"></div>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src=""/></div>
+				<div class="swiper-slide"><img src=""/></div>
+				<div class="swiper-slide"><img src=""/></div>
+				<div class="swiper-slide"><img src=""/></div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<div class="tu">
+			<div><img src=""/><p></p></div>
+			<div><img src=""/><p></p></div>
+			<div><img src=""/><p></p></div>
+			<div><img src=""/><p></p></div>
+			<div><img src=""/><p></p></div>
+			<div><img src=""/><p></p></div>
+			<div><img src=""/><p></p></div>
+			<div><img src=""/><p></p></div>
+			<div><img src=""/><p></p></div>
+			<div><img src=""/><p></p></div>
+		</div>
+		<div class="aa"><img src=""/></div>
+		<div class="bb">
+			<img src=""/>
+			<div><p></p></div>
+		</div>
+		<div class="dd">
+			<p>
+				<span style="color: red;">￥9.9</span>
+				<span style="color: darkgray;">已团购100万件</span>
+			</p>
+			<p >
+				<img src="img/t1.jpg"/>
+				<img src="img/t2.jpg"/>
+				<span style="background: red;color: white;width: 6rem;height: 3rem;">去开团></span>
+			</p>
+		</div>
+		<div class="bb">
+			<img src=""/>
+			<div><p></p></div>
+		</div>
+		<div class="dd">
+			<p>
+				<span style="color: red;">￥9.9</span>
+				<span style="color: darkgray;">已团购100万件</span>
+			</p>
+			<p >
+				<img src="img/t1.jpg"/>
+				<img src="img/t2.jpg"/>
+				<span style="background: red;color: white;width: 6rem;height: 3rem;">去开团></span>
+			</p>
+		</div>
+		<div class="yy">
+			<p>春装来袭，不止是1折</p>
+			<p style="color: darkgray;">查看更多></p>
+		</div>
+		<div class="tt">
+			<div><img src=""/><p></p><p style="color: red;"></p></div>
+			<div><img src=""/><p></p><p style="color: red;"></p></div>
+			<div><img src=""/><p></p><p style="color: red;"></p></div>
+		</div>
+		<div class="bb">
+			<img src=""/>
+			<div><p></p></div>
+		</div>
+		<div class="dd">
+			<p>
+				<span style="color: red;">￥9.9</span>
+				<span style="color: darkgray;">已团购100万件</span>
+			</p>
+			<p >
+				<img src="img/t1.jpg"/>
+				<img src="img/t2.jpg"/>
+				<span style="background: red;color: white;width: 6rem;height: 3rem;">去开团></span>
+			</p>
+		</div>
+		<div class="bb">
+			<img src=""/>
+			<div><p></p></div>
+		</div>
+		<div class="dd">
+			<p>
+				<span style="color: red;">￥9.9</span>
+				<span style="color: darkgray;">已团购100万件</span>
+			</p>
+			<p >
+				<img src="img/t1.jpg"/>
+				<img src="img/t2.jpg"/>
+				<span style="background: red;color: white;width: 6rem;height: 3rem;">去开团></span>
+			</p>
+		</div>
+		<div class="a"></div>
+		<div class="navbar-fixed-bottom xia">
+			<div>
+				<span class="glyphicon glyphicon-home"></span>
+				<p>首页</p>
+			</div>
+			<div>
+				<span class="glyphicon glyphicon-star"></span>
+				<p>新品</p>
+			</div>
+			<div>
+				<span class="glyphicon glyphicon-heart"></span>
+				<p>海淘</p>
+			</div>
+			<div>
+				<span class="glyphicon glyphicon-search"></span>
+				<p>搜索</p>
+			</div>
+			<div>
+				<span class="glyphicon glyphicon-user"></span>
+				<p>个人中心</p>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload = window.onresize = function() {
+			document.documentElement.style.fontSize = 10 *
+				(document.documentElement.clientWidth / 320) + 'px'
+		}
+		var mySwiper=new Swiper(".swiper-container",{
+			autoplay:1000,
+			pagination:".swiper-pagination",
+		})
+		$.ajax({
+			type:"GET",
+			url:"http://127.0.0.1:6689",
+			async:true,
+			dataType:"json",
+			success:function(data){
+				$.each(data.top, function(i,n) {
+					$(".top p").eq(i).html(n);
+				});
+				$.each(data.lun, function(i,n) {
+					$(".swiper-slide img").eq(i).attr("src",n);
+				});
+;				$.each(data.tu, function(i,n) {
+					$(".tu div img").eq(i).attr("src",n);
+				});
+				$.each(data.tu1, function(i,n) {	
+					$(".tu div p").eq(i).html(n);
+				});
+				$.each(data.aa, function(i,n) {
+					$(".aa img").attr("src",n);
+				});
+				$.each(data.bb, function(i,n) {
+					$(".bb img").attr("src",n);
+				});
+				$.each(data.bb1, function(i,n) {
+					$(".bb div p").html(n);
+				});
+				$.each(data.dd, function(i,n) {
+					$(".dd div p").eq(i).html(n);
+				});
+				$.each(data.dd1, function(i,n) {
+					$(".dd div img").eq(i).attr("src",n);
+				});
+				$.each(data.dd2, function(i,n) {
+					$(".dd div p").html(n);
+				});
+				$.each(data.tt, function(i,n) {
+					$(".tt div img").eq(i).attr("src",n);
+				});
+				$.each(data.tt1, function(i,n) {
+					$(".tt div p").eq(i).html(n);
+				})
+			}
+		});
+	</script>
+</html>
